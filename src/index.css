@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(11, 11, 11);
+  color: rgb(245, 239, 239);
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem; /* Increase the size of the header */
+  margin-bottom: 2rem;
+}
+
+.character-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Set to two columns */
+  gap: 20px;
+  width: 80%; /* Ensure it uses most of the available width */
+}
+
+.character-card {
+  background-color: #2a2828;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Use flexbox for layout */
+  height: 200px; /* Fixed height for the card */
+}
+
+.character-image {
+  flex: 1; /* Allow the image to take up equal space */
+  overflow: hidden; /* Ensure image fits within the container */
+}
+
+.character-card img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover; /* Ensure the image covers the entire area */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.character-details {
+  flex: 2; /* Allow the details to take up more space */
+  padding: 20px;
+  text-align: left;
+}
+
+.character-name {
+  font-size: 1.5rem; /* Adjust font size */
+  margin-bottom: 10px;
+}
+
+.character-info {
+  font-size: 1.2rem; /* Adjust font size */
+  margin-bottom: 5px;
+}
+
+.last-seen {
+  font-size: 1rem; /* Adjust font size */
+  margin-bottom: 5px;
+}
+
+.character-location {
+  font-size: 1.2rem; /* Adjust font size */
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+  .character-grid {
+    grid-template-columns: 1fr; /* Stack items on smaller screens */
+  }
+
+  .character-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .character-card img {
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+  }
+
+  .character-details {
+    padding: 10px;
+  }
+}
